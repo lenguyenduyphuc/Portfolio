@@ -19,20 +19,71 @@
   z-index: 1;
 }
 
-.title {
-  font-size: 72px;
-  font-weight: 900;
-  margin-bottom: 33px;
-  font-family: var(--font-roboto);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 70%,
-    rgba(255, 255, 255, 0) 120%
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+/* Typing Effect for .line1 and .line2 */
+.line1, .line2 {
+  display: inline-block;
+  white-space: nowrap; /* Keeps text on a single line */
+  overflow: hidden; /* Hide text overflow to create typing effect */
+  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor effect */
+  animation: blinkCursor 0.75s steps(44) infinite normal; /* Continuous blinking cursor */
 }
 
+.line1 {
+  font-size: 72px;
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  animation: typewriter1 2s steps(50, end) forwards, /* Typing effect for the first line */
+             blink-caret .75s step-end infinite 0.25s,
+             hide-cursor 0.75s forwards 0s /* Continuous blinking cursor */
+}
+
+.line2 {
+  font-size: 72px;
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  margin-top: 10px; /* Adjust spacing between lines if needed */
+  opacity: 0; /* Initially hidden */
+  animation: typewriter2 2s steps(50, end) 2.1s forwards, /* Immediate typing for the second line */
+             blink-caret .75s step-end infinite 1s; /* Continuous blinking cursor */
+}
+
+/* Keyframes for the Typing Animation */
+@keyframes typewriter1 {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+@keyframes typewriter2 {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+/* Cursor Blinking Animation */
+@keyframes blink-caret {
+  0% {
+    border-color: transparent; /* Initially transparent */
+  }
+  50% {
+    border-right: .10em solid rgb(191, 194, 194)
+  }
+  100% {
+    border-color: transparent; /* Hide at the end of the cycle */
+  }
+}
+
+@keyframes hide-cursor {
+  0% {
+    border-right: .10em solid rgb(191, 194, 194); /* Start with visible cursor */
+  }
+  99% {
+    border-right: .10em solid rgb(191, 194, 194); /* Keep visible until the last moment */
+  }
+  100% {
+    border-right: none; /* Hide cursor immediately */
+  }
+}
+
+/* General Styling */
 .description {
   font-size: 30px;
   font-family: var(--font-roboto);
@@ -47,13 +98,12 @@
   font-size: 30px;
   font-weight: 600;
   padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 4px 0 rgba(168, 166, 166, 0.25);
 }
 
 .heroImg {
   width: 50%;
   z-index: 1;
-
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -77,7 +127,6 @@
   width: 50vw;
   height: 50vw;
   min-width: 350px;
-  min-width: 350px;
   top: -128px;
   left: -10vw;
   border-radius: 764px;
@@ -90,7 +139,6 @@
   position: absolute;
   width: 70vw;
   height: 50vw;
-  min-width: 350px;
   min-width: 250px;
   top: 246px;
   right: -25vw;
