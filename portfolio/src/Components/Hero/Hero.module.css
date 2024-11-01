@@ -85,6 +85,7 @@
 
 /* General Styling */
 .description {
+  margin: 50px 50px 0px 0px;
   font-size: 30px;
   font-family: var(--font-roboto);
   margin-bottom: 52px;
@@ -98,7 +99,7 @@
   font-size: 30px;
   font-weight: 600;
   padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(168, 166, 166, 0.25);
+  box-shadow: 0 0 10px 0 rgba(168, 166, 166, 0.25);
 }
 
 .heroImg {
@@ -108,6 +109,7 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  border-radius: 20px;
 }
 
 @keyframes floating {
@@ -115,7 +117,7 @@
     transform: translate(0, 0px);
   }
   50% {
-    transform: translate(0, 10px);
+    transform: translate(0, 20px);
   }
   100% {
     transform: translate(0, -0px);

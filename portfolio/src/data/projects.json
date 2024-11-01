@@ -4,7 +4,6 @@
       "imageSrc": "projects/portfolio.png",
       "description": "A simple portfolio to show my skills",
       "skills": ["React", "HTML", "CSS"],
-      "demo": "https://www.example.com",
-      "source": "https://www.github.com"
+      "source": "https://github.com/lenguyenduyphuc/Portfolio"
     }
 ]

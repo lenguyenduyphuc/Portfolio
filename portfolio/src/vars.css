@@ -1,6 +1,6 @@
 :root {
   /* Colours */
-  --color-text: rgb(191, 194, 194); /* Light gray for readable text */
+  --color-text: rgb(255, 255, 255); /* Light gray for readable text */
   --color-primary: #1e1e1f; /* Very dark gray for primary background elements */
   --color-secondary: #2a2a2b; /* Slightly lighter gray for secondary elements */
   --color-dark: #181818; /* Almost black, a good contrast for backgrounds */

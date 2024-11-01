@@ -9,6 +9,7 @@
 
 .title {
   color: var(--color-text);
+  margin: 0px 0px 50px 20px;
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 1.75px;
@@ -57,7 +58,7 @@
 }
 
 .history {
-  width: 45%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -78,6 +79,7 @@
     background-size: 0 100%;
     background-repeat: no-repeat;
     transition: 0.4s;
+    gap: 20px;
 }
 
 .historyItem:hover {
@@ -86,7 +88,8 @@
 
 
 .historyItem img {
-  width: 50px;
+  width: 75px;
+  margin-right: 20px;
 }
 
 .historyItemDetails {
@@ -99,7 +102,7 @@
 }
 
 .historyItemDetails p {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 300;
 }
 
@@ -108,7 +111,6 @@
   list-style-position: inside;
   font-size: 25px;
   list-style-type: disc;
-  margin-left: 17px;
 }
 
 @media screen and (max-width: 830px) {
