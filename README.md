@@ -1,46 +1,63 @@
-### Nguyen Duy Phuc Le's Portfolio
+# Nguyen Duy Phuc Le's Portfolio
 
-### Welcome to my portfolio! 
+
+## Welcome to my portfolio! 
+
 I'm Nguyen Duy Phuc Le, a passionate developer specializing in building responsive and user-friendly web applications using React, HTML, and CSS. This portfolio showcases my skills, projects, and professional journey.
 
 
-### About This Project
+## About This Project
+
 This portfolio is a single-page application (SPA) built with React that serves as a comprehensive showcase of my work, skills, and experiences. It is designed to provide visitors with an intuitive and engaging experience as they navigate through different sections of my professional profile.
 
-### Features
+## Features
+
 The portfolio is divided into six main sections:
 
 
-Navbar
+### Navbar:
+
 Responsive navigation bar for easy access to different sections.
 
 
-Hero
+###  Hero:
+
 An engaging introduction with a professional photo and a brief welcome message.
 
 
-About
+### About:
+
 A section detailing my background, interests, and what drives me as a developer.
 
 
-Experience
+### Experience:
+
 Highlights of my professional experiences, roles, and key accomplishments.
 
 
-Projects
+###  Projects:
+
 A showcase of my projects with descriptions, technologies used, and links to live demos or repositories.
 
 
-Contact
+### Contact:
+
 A contact form and information for visitors to reach out to me.
 
 Technologies Used
+
 React: JavaScript library for building user interfaces.
+
 HTML5: Standard markup language for creating web pages.
+
 CSS3: Style sheet language used for describing the presentation of a document.
+
 React Router: For handling navigation within the SPA.
+
 Other Libraries: (List any additional libraries or tools you used)
-Installation
+
+
+## Installation
 
 ### To run this project locally, follow these steps:
 
