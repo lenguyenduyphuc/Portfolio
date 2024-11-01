@@ -1,0 +1,11 @@
+[
+    {
+        "role": "Research Assistant",
+        "organisation": "University of South Florida",
+        "startDate": "September, 2024",
+        "endDate": "Present",
+        "experiences": ["Assisting my professor to train an AI model to detect vulnerabilities in smart home"],
+        "skills": ["Data analysis, Prompting, Python, Researching"],
+        "imageSrc": "history/usf.png"
+    }
+]
