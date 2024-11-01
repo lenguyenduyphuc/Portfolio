@@ -44,7 +44,8 @@ A showcase of my projects with descriptions, technologies used, and links to liv
 
 A contact form and information for visitors to reach out to me.
 
-Technologies Used
+
+### Technologies Used:
 
 React: JavaScript library for building user interfaces.
 
