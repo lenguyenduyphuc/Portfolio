@@ -2,32 +2,28 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 79px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 79px 10% 0;
 }
 
 .title {
   color: var(--color-text);
-  margin: 0px 0px 50px 20px;
-  font-size: 35px;
-  font-weight: 700;
+  margin: 0 0 50px 20px;
+  font: 700 35px/1.2 var(--font-roboto);
   letter-spacing: 1.75px;
   text-transform: uppercase;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   margin-top: 14px;
 }
 
 .skills {
-  width: 90%;
   display: flex;
   flex-wrap: wrap;
   gap: 37px;
+  width: 90%;
 }
 
 .skill {
@@ -39,7 +35,7 @@
 
 .skillImageContainer {
   background-color: var(--color-secondary);
-  border-radius: 100%;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,44 +48,39 @@
 }
 
 .skill p {
-  font-size: 25px;
-  font-family: var(--font-roboto);
-  font-weight: 500;
+  font: 500 25px/1 var(--font-roboto);
 }
 
 .history {
-  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 60%;
 }
 
 .historyItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 20px;
-    list-style: none;
-    padding: 25px;
-    background-image: linear-gradient(
-      90deg,
-      rgba(165, 215, 232, 0.42) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background-size: 0 100%;
-    background-repeat: no-repeat;
-    transition: 0.4s;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 20px;
+  list-style: none;
+  background: linear-gradient(
+    90deg,
+    rgba(165, 215, 232, 0.42) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s;
 }
 
 .historyItem:hover {
-    background-size: 100% 100%;
+  background-size: 100% 100%;
 }
-
 
 .historyItem img {
   width: 75px;
-  margin-right: 20px;
 }
 
 .historyItemDetails {
@@ -101,16 +92,19 @@
   font-weight: 500;
 }
 
-.historyItemDetails p {
+.historyItemDetails p,
+.historyItemDetails ul {
+  margin-top: 6px;
   font-size: 25px;
+}
+
+.historyItemDetails p {
   font-weight: 300;
+  margin-top: 6px;
 }
 
 .historyItemDetails ul {
-  margin-top: 6px;
-  list-style-position: inside;
-  font-size: 25px;
-  list-style-type: disc;
+  list-style: disc inside;
 }
 
 @media screen and (max-width: 830px) {
@@ -122,7 +116,6 @@
 
   .skills {
     width: 100%;
-    flex-direction: row;
     justify-content: center;
   }
 

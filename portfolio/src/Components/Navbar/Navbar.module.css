@@ -1,41 +1,42 @@
 @import "../../vars.css";
 
 .navbar {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   padding-top: 61px;
   z-index: 2;
   margin: 0 10%;
 }
 
-.title {
-  font-size: 30px;
-  font-weight: 600;
+.title,
+.menuItems a {
   text-decoration: none;
   color: var(--color-text);
 }
 
+.title {
+  font-size: 30px;
+  font-weight: 600;
+}
 
 .menuBtn {
   display: none;
 }
 
-.menu {
+.menu,
+.menuItems {
   display: flex;
 }
 
 .menuItems {
-  display: flex;
   gap: 47px;
   list-style: none;
 }
 
 .menuItems a {
   font-size: 25px;
-  color: var(--color-text);
-  text-decoration: none;
 }
 
 @media screen and (max-width: 830px) {
@@ -65,14 +66,9 @@
     align-items: center;
     gap: 13px;
     border-radius: 10px;
-    background: rgba(45, 50, 58, 0.7);
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0%,
-      rgb(0, 0, 0) 100%
-    );
+    background: linear-gradient(0deg, rgba(25, 55, 109, 0.2) 0%, #000 100%);
     padding: 24px 33px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   }
 
   .menuOpen {

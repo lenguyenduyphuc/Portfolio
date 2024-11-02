@@ -1,16 +1,16 @@
 @import "../../vars.css";
 
+/* Container Styling */
 .container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 49px;
+  margin: 49px 10% 0; /* Combined margin-top, margin-left, margin-right */
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
+/* Content Styling */
 .content {
   display: flex;
   flex-direction: column;
@@ -19,35 +19,34 @@
   z-index: 1;
 }
 
-/* Typing Effect for .line1 and .line2 */
-.line1, .line2 {
+/* Typing Effect Styling */
+.line1,
+.line2 {
   display: inline-block;
   white-space: nowrap; /* Keeps text on a single line */
   overflow: hidden; /* Hide text overflow to create typing effect */
   border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor effect */
-  animation: blinkCursor 0.75s steps(44) infinite normal; /* Continuous blinking cursor */
+  font: 900 72px/1.2 var(--font-roboto); /* Combined font properties */
 }
 
+/* Line 1 Animation */
 .line1 {
-  font-size: 72px;
-  font-weight: 900;
-  font-family: var(--font-roboto);
-  animation: typewriter1 2s steps(50, end) forwards, /* Typing effect for the first line */
-             blink-caret .75s step-end infinite 0.25s,
-             hide-cursor 0.75s forwards 0s /* Continuous blinking cursor */
+  animation: 
+    typewriter1 2s steps(50, end) forwards, /* Typing effect */
+    blinkCaret 0.75s step-end infinite 0.25s, /* Blinking cursor */
+    hideCursor 0.75s forwards; /* Hide cursor after typing */
 }
 
+/* Line 2 Animation */
 .line2 {
-  font-size: 72px;
-  font-weight: 900;
-  font-family: var(--font-roboto);
-  margin-top: 10px; /* Adjust spacing between lines if needed */
+  margin-top: 10px; /* Spacing between lines */
   opacity: 0; /* Initially hidden */
-  animation: typewriter2 2s steps(50, end) 2.1s forwards, /* Immediate typing for the second line */
-             blink-caret .75s step-end infinite 1s; /* Continuous blinking cursor */
+  animation: 
+    typewriter2 2s steps(50, end) 2.1s forwards, /* Typing effect with delay */
+    blinkCaret 0.75s step-end infinite 1s; /* Blinking cursor */
 }
 
-/* Keyframes for the Typing Animation */
+/* Keyframes for Typing Animations */
 @keyframes typewriter1 {
   from { width: 0; opacity: 1; }
   to { width: 100%; opacity: 1; }
@@ -58,37 +57,22 @@
   to { width: 100%; opacity: 1; }
 }
 
-/* Cursor Blinking Animation */
-@keyframes blink-caret {
-  0% {
-    border-color: transparent; /* Initially transparent */
-  }
-  50% {
-    border-right: .10em solid rgb(191, 194, 194)
-  }
-  100% {
-    border-color: transparent; /* Hide at the end of the cycle */
-  }
+/* Keyframes for Cursor Blinking */
+@keyframes blinkCaret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: rgb(191, 194, 194); }
 }
 
-@keyframes hide-cursor {
-  0% {
-    border-right: .10em solid rgb(191, 194, 194); /* Start with visible cursor */
-  }
-  99% {
-    border-right: .10em solid rgb(191, 194, 194); /* Keep visible until the last moment */
-  }
-  100% {
-    border-right: none; /* Hide cursor immediately */
-  }
+/* Keyframes to Hide Cursor */
+@keyframes hideCursor {
+  0%, 99% { border-right: 0.10em solid rgb(191, 194, 194); }
+  100% { border-right: none; }
 }
 
 /* General Styling */
 .description {
-  margin: 50px 50px 0px 0px;
-  font-size: 30px;
-  font-family: var(--font-roboto);
-  margin-bottom: 52px;
+  margin: 50px 50px 52px 0; /* Combined margin properties */
+  font: 300 30px/1 var(--font-roboto); /* Combined font properties */
 }
 
 .contactBtn {
@@ -96,66 +80,65 @@
   background-color: var(--color-primary);
   color: var(--color-text);
   border-radius: 100px;
-  font-size: 30px;
-  font-weight: 600;
+  font: 600 30px/1 var(--font-roboto); /* Combined font properties */
   padding: 17px 26px;
-  box-shadow: 0 0 10px 0 rgba(168, 166, 166, 0.25);
+  box-shadow: 0 0 10px rgba(168, 166, 166, 0.25);
 }
 
+/* Hero Image Styling */
 .heroImg {
   width: 50%;
   z-index: 1;
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
   border-radius: 20px;
+  animation: floating 3s ease-in-out infinite;
 }
 
+/* Floating Animation */
 @keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 20px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+/* Blur Elements Styling */
+.topBlur,
+.bottomBlur {
+  position: absolute;
+  border-radius: 764px;
+  background: rgba(45, 50, 58, 0.7);
+  filter: blur(100px);
+  z-index: 0;
 }
 
 .topBlur {
-  position: absolute;
   width: 50vw;
   height: 50vw;
   min-width: 350px;
   top: -128px;
   left: -10vw;
-  border-radius: 764px;
-  background: rgba(45, 50, 58, 0.7);
-  filter: blur(100px);
-  z-index: 0;
 }
 
 .bottomBlur {
-  position: absolute;
   width: 70vw;
   height: 50vw;
   min-width: 250px;
   top: 246px;
   right: -25vw;
-  border-radius: 764px;
-  background: rgba(45, 50, 58, 0.7);
-  filter: blur(100px);
-  z-index: 0;
 }
 
+/* Media Queries */
 @media screen and (max-width: 830px) {
   .container {
     flex-direction: column-reverse;
+    margin: 49px 5% 0; /* Optional: Adjust margins for smaller screens */
   }
 
   .content {
     align-items: center;
   }
+
+  .heroImg {
+    width: 80%; /* Optional: Adjust image width for smaller screens */
+  }
+
+  /* Additional responsive styles can be added here */
 }

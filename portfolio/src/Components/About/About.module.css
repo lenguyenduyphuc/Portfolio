@@ -5,23 +5,19 @@
   background-color: rgba(12, 12, 12, 0.6);
   border-radius: 15px;
   padding: 73px;
-  margin-top: 129px;
+  margin: 129px 10% 0;
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .title {
   color: var(--color-text);
-  font-size: 35px;
-  font-weight: 700;
+  font: 700 35px/1.2 var(--font-roboto);
   letter-spacing: 1.75px;
   text-transform: uppercase;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -29,16 +25,10 @@
   width: 35%;
 }
 
-.mouse {
-  width: 50px;
-  height: auto; 
-  gap: 50px;
-}
-
+.mouse,
 .database {
-  width: 50px; 
-  height: auto; 
-  gap: 50px;
+  width: 50px;
+  height: auto;
 }
 
 .aboutItems {
@@ -50,41 +40,39 @@
 
 .aboutItem {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 25px; /* Half of the original gap between padding and margin */
+  padding: 25px 25px;
   border-radius: 20px;
   list-style: none;
-  padding: 25px;
-  background-image: linear-gradient(
+  background: linear-gradient(
     90deg,
     rgba(165, 215, 232, 0.42) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: 0.4s;
+  transition: background-size 0.4s;
 }
 
 .aboutItem:hover {
   background-size: 100% 100%;
 }
 
-.aboutItem h3 {
-  margin-left: 50px;
-  font-size: 25px;
-  font-weight: 600;
-}
-
+.aboutItem h3,
 .aboutItem p {
   margin-left: 50px;
   font-size: 25px;
 }
 
+.aboutItem h3 {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 830px) {
   .container {
     background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 73px 0;
   }
 
   .content {
@@ -100,7 +88,12 @@
   }
 
   .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 25px 0;
+    gap: 20px; /* Adjusted for better spacing on smaller screens */
+  }
+
+  .aboutItem h3,
+  .aboutItem p {
+    margin-left: 0;
   }
 }
