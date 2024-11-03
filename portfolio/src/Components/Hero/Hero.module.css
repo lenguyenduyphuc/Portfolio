@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* Base Styles */
 .container {
   position: relative;
   display: flex;
@@ -140,7 +141,8 @@
   right: -25vw;
 }
 
-@media screen and (max-width: 830px) {
+/* Existing Media Query for Tablets and Small Desktops */
+@media screen and (max-width: 1200px) {
   .container {
     flex-direction: column-reverse;
   }
@@ -150,6 +152,7 @@
   }
 }
 
+/* Additional Media Query for Mobile Phones */
 @media screen and (max-width: 480px) {
   .container {
     margin-left: 2%;
