@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* Base Styles */
 .container {
   margin-top: 76px;
   color: var(--color-text);
@@ -24,4 +25,51 @@
   justify-content: center;
   gap: 15px;
   width: 100%;
+}
+
+/* Existing Media Query for Tablets and Small Desktops */
+@media screen and (max-width: 1200px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-left: 30px;
+  }
+
+  .projects {
+    gap: 10px;
+  }
+}
+
+/* Additional Media Query for Mobile Phones */
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 40px 2% 0; 
+    padding: 10px; 
+    width: 100%;
+    box-sizing: border-box; 
+  }
+
+  .title {
+    font-size: 24px; 
+    margin-left: 0; 
+    text-align: center; 
+    letter-spacing: 1.5px; 
+    margin-bottom: 20px; 
+  }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+  }
+
+  .projects > * {
+    width: 90%; 
+    max-width: 400px; 
+  }
 }

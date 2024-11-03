@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* Base Styles */
 .container {
   display: flex;
   flex-direction: column;
@@ -58,4 +59,93 @@
   border-radius: 100px;
   background: var(--color-primary);
   padding: 1px 22px;
+}
+
+/* Existing Media Query for Tablets and Small Desktops */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 15px 20px;
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .skills {
+    gap: 10px;
+  }
+
+  .skill {
+    font-size: 20px;
+    padding: 2px 18px;
+  }
+
+  .link {
+    font-size: 24px;
+    padding: 1px 18px;
+  }
+}
+
+/* Additional Media Query for Mobile Phones */
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 60px 2% 0; 
+    padding: 15px 10px; 
+    max-width: 100%; 
+    border-radius: 15px; 
+  }
+
+  .image {
+    margin-bottom: 20px; 
+    width: 100%; 
+  }
+
+  .title {
+    font-size: 20px; 
+    letter-spacing: 1.5px; 
+    text-align: center; 
+    margin: 0 0 20px 0; 
+  }
+
+  .description {
+    font-size: 18px; 
+    text-align: center; 
+    margin-top: 10px; 
+  }
+
+  .skills {
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px; 
+  }
+
+  .skill {
+    font-size: 18px;
+    padding: 2px 16px; 
+  }
+
+  .links {
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
+    margin-top: 20px; 
+  }
+
+  .link {
+    font-size: 20px; 
+    padding: 5px 18px;
+    width: 80%; 
+    text-align: center; 
+  }
+
+
+  .link img {
+    width: 25px; 
+    height: 25px; 
+  }
 }

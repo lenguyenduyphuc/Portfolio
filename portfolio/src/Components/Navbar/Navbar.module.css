@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* Base Styles */
 .navbar {
   display: flex;
   align-items: center;
@@ -39,10 +40,13 @@
   font-size: 25px;
 }
 
-@media screen and (max-width: 830px) {
+/* Existing Media Query for Tablets and Small Desktops */
+@media screen and (max-width: 1200px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 40px; 
+    margin: 0 5%; 
   }
 
   .menu {
@@ -58,6 +62,7 @@
   .menuBtn {
     display: block;
     cursor: pointer;
+    font-size: 28px; 
   }
 
   .menuItems {
@@ -66,13 +71,46 @@
     align-items: center;
     gap: 13px;
     border-radius: 10px;
-    background: linear-gradient(0deg, rgba(25, 55, 109, 0.2) 0%, #000 100%);
+    background: rgb(32, 32, 32);
+    background: linear-gradient(
+      0deg,
+      rgba(112, 112, 112, 0.2) 0%,
+      rgb(0, 0, 0) 100%
+    );
     padding: 24px 33px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    width: 100%; 
+    box-sizing: border-box; 
   }
 
   .menuOpen {
     display: flex;
     z-index: 1;
+  }
+}
+
+/* Additional Media Query for Mobile Phones */
+@media screen and (max-width: 480px) {
+  .navbar {
+    margin: 0 2%; 
+    padding-top: 30px; 
+  }
+
+  .title {
+    font-size: 24px; 
+  }
+
+  .menuItems a {
+    font-size: 20px; 
+  }
+
+  .menuBtn {
+    font-size: 24px; 
+  }
+
+  .menuItems {
+    padding: 20px 25px; 
+    gap: 10px; 
+    border-radius: 8px; 
   }
 }
