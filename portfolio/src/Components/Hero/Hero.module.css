@@ -1,16 +1,16 @@
 @import "../../vars.css";
 
-/* Container Styling */
 .container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 49px 10% 0; /* Combined margin-top, margin-left, margin-right */
+  margin-top: 49px;
   z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-/* Content Styling */
 .content {
   display: flex;
   flex-direction: column;
@@ -19,60 +19,67 @@
   z-index: 1;
 }
 
-/* Typing Effect Styling */
 .line1,
 .line2 {
+  font-size: 72px;
+  font-weight: 900;
+  margin-bottom: 33px;
+  font-family: var(--font-roboto);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 120%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   display: inline-block;
-  white-space: nowrap; /* Keeps text on a single line */
-  overflow: hidden; /* Hide text overflow to create typing effect */
-  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor effect */
-  font: 900 72px/1.2 var(--font-roboto); /* Combined font properties */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font: 900 72px/1.2 var(--font-roboto);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-/* Line 1 Animation */
 .line1 {
   animation: 
-    typewriter1 2s steps(50, end) forwards, /* Typing effect */
-    blinkCaret 0.75s step-end infinite 0.25s, /* Blinking cursor */
-    hideCursor 0.75s forwards; /* Hide cursor after typing */
+    typewriter1 2s steps(50, end) forwards, 
+    blinkCaret 0.75s step-end infinite 0.25s, 
+    hideCursor 0.75s forwards;
 }
 
-/* Line 2 Animation */
 .line2 {
-  margin-top: 10px; /* Spacing between lines */
-  opacity: 0; /* Initially hidden */
+  margin-top: 10px;
+  opacity: 0;
   animation: 
-    typewriter2 2s steps(50, end) 2.1s forwards, /* Typing effect with delay */
-    blinkCaret 0.75s step-end infinite 1s; /* Blinking cursor */
+    typewriter2 2s steps(50, end) 2.1s forwards, 
+    blinkCaret 0.75s step-end infinite 1s;
 }
 
-/* Keyframes for Typing Animations */
 @keyframes typewriter1 {
   from { width: 0; opacity: 1; }
-  to { width: 100%; opacity: 1; }
+  to { width: calc(30px + 100%); opacity: 1; }
 }
 
 @keyframes typewriter2 {
   from { width: 0; opacity: 1; }
-  to { width: 100%; opacity: 1; }
+  to { width: calc(30px + 100%); opacity: 1; }
 }
 
-/* Keyframes for Cursor Blinking */
 @keyframes blinkCaret {
   0%, 100% { border-color: transparent; }
   50% { border-color: rgb(191, 194, 194); }
 }
 
-/* Keyframes to Hide Cursor */
 @keyframes hideCursor {
   0%, 99% { border-right: 0.10em solid rgb(191, 194, 194); }
   100% { border-right: none; }
 }
 
-/* General Styling */
 .description {
-  margin: 50px 50px 52px 0; /* Combined margin properties */
-  font: 300 30px/1 var(--font-roboto); /* Combined font properties */
+  font-size: 30px;
+  font-family: var(--font-roboto);
+  margin-bottom: 52px;
 }
 
 .contactBtn {
@@ -80,26 +87,34 @@
   background-color: var(--color-primary);
   color: var(--color-text);
   border-radius: 100px;
-  font: 600 30px/1 var(--font-roboto); /* Combined font properties */
+  font-size: 30px;
+  font-weight: 600;
   padding: 17px 26px;
   box-shadow: 0 0 10px rgba(168, 166, 166, 0.25);
 }
 
-/* Hero Image Styling */
 .heroImg {
   width: 50%;
   z-index: 1;
-  border-radius: 20px;
-  animation: floating 3s ease-in-out infinite;
+
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
-/* Floating Animation */
 @keyframes floating {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
-/* Blur Elements Styling */
 .topBlur,
 .bottomBlur {
   position: absolute;
@@ -125,20 +140,55 @@
   right: -25vw;
 }
 
-/* Media Queries */
 @media screen and (max-width: 830px) {
   .container {
     flex-direction: column-reverse;
-    margin: 49px 5% 0; /* Optional: Adjust margins for smaller screens */
   }
 
   .content {
     align-items: center;
   }
+}
 
-  .heroImg {
-    width: 80%; /* Optional: Adjust image width for smaller screens */
+@media screen and (max-width: 480px) {
+  .container {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
   }
 
-  /* Additional responsive styles can be added here */
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .line1,
+  .line2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .contactBtn {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  .heroImg {
+    width: 100%;
+    animation: none;
+  }
+
+  .topBlur,
+  .bottomBlur {
+    display: none;
+  }
 }

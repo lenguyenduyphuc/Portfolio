@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* Base Styles */
 .container {
   color: var(--color-text);
   margin: 79px 10% 0;
@@ -107,7 +108,8 @@
   list-style: disc inside;
 }
 
-@media screen and (max-width: 830px) {
+/* Existing Media Query for Tablets and Small Desktops */
+@media screen and (max-width: 1200px) {
   .content {
     flex-direction: column;
     align-items: center;
@@ -116,11 +118,83 @@
 
   .skills {
     width: 100%;
+    flex-direction: row;
     justify-content: center;
   }
 
   .history {
     width: 100%;
     gap: 9px;
+  }
+}
+
+/* Additional Media Query for Mobile Phones */
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 50px 2%; /* Reduced top margin and side margins */
+  }
+
+  .title {
+    margin: 0 0 30px 0; /* Removed left margin */
+    font: 700 28px/1.2 var(--font-roboto); /* Reduced font size */
+    letter-spacing: 1.5px; /* Slightly reduced letter spacing */
+    text-align: center; /* Centered text */
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Reduced top margin */
+  }
+
+  .skills {
+    width: 100%;
+    justify-content: center;
+    gap: 20px; /* Reduced gap between skills */
+  }
+
+  .skillImageContainer {
+    width: 80px; /* Reduced size for mobile */
+    height: 80px;
+  }
+
+  .skillImageContainer img {
+    width: 50px; /* Reduced image size */
+  }
+
+  .skill p {
+    font: 500 20px/1 var(--font-roboto); /* Reduced font size */
+  }
+
+  .history {
+    width: 100%;
+    gap: 20px; /* Increased gap for better readability */
+  }
+
+  .historyItem {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    padding: 20px; /* Reduced padding */
+    gap: 15px; /* Reduced gap between items */
+  }
+
+  .historyItem img {
+    width: 60px; /* Reduced image size */
+  }
+
+  .historyItemDetails h3 {
+    font-size: 24px; /* Reduced font size */
+    text-align: center; /* Centered text */
+  }
+
+  .historyItemDetails p,
+  .historyItemDetails ul {
+    font-size: 18px; /* Reduced font size */
+    text-align: center; /* Centered text */
+  }
+
+  .historyItemDetails ul {
+    padding-left: 0; /* Remove left padding */
   }
 }
