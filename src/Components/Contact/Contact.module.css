@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* Base Styles */
 .container {
   color: var(--color-text);
   margin-top: 120px;
@@ -46,6 +47,7 @@
   letter-spacing: 1.5px;
 }
 
+/* Existing Media Query for Tablets and Small Desktops */
 @media screen and (max-width: 1200px) {
   .container {
     flex-direction: column;
@@ -63,6 +65,7 @@
   }
 }
 
+/* Additional Media Query for Mobile Phones */
 @media screen and (max-width: 480px) {
   .container {
     margin-top: 60px;
