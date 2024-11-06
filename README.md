@@ -86,3 +86,6 @@ Start the Development Server
 npm start
 ```
 The application will run on http://localhost:5173/ by default. Open this URL in your browser to view the portfolio.
+
+# Follow this link to see the portfolio
+https://lenguyenduyphuc.github.io/Portfolio/
