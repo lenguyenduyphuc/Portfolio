@@ -1,6 +1,5 @@
 @import "../../vars.css";
 
-/* Base Styles */
 .container {
   color: var(--color-text);
   margin: 79px 10% 0;
@@ -32,6 +31,11 @@
   flex-direction: column;
   align-items: center;
   gap: 11px;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
 }
 
 .skillImageContainer {
@@ -42,10 +46,29 @@
   justify-content: center;
   width: 120px;
   height: 120px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.skillImageContainer:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .skillImageContainer img {
   width: 75px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .skill p {
@@ -66,22 +89,33 @@
   padding: 25px;
   border-radius: 20px;
   list-style: none;
-  background: linear-gradient(
-    90deg,
-    rgba(165, 215, 232, 0.42) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(90deg, rgba(165, 215, 232, 0.42) 0%, rgba(255, 255, 255, 0) 100%);
   background-size: 0 100%;
   background-repeat: no-repeat;
   transition: background-size 0.4s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .historyItem:hover {
   background-size: 100% 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .historyItem img {
   width: 75px;
+  animation: rotate 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .historyItemDetails {
@@ -108,7 +142,6 @@
   list-style: disc inside;
 }
 
-/* Existing Media Query for Tablets and Small Desktops */
 @media screen and (max-width: 1200px) {
   .content {
     flex-direction: column;
@@ -128,16 +161,15 @@
   }
 }
 
-/* Additional Media Query for Mobile Phones */
 @media screen and (max-width: 480px) {
   .container {
-    margin: 50px 2%; 
+    margin: 50px 2%;
   }
 
   .title {
     margin: 0 0 30px 0;
-    font: 700 28px/1.2 var(--font-roboto); 
-    letter-spacing: 1.5px; 
+    font: 700 28px/1.2 var(--font-roboto);
+    letter-spacing: 1.5px;
     text-align: center;
   }
 
@@ -151,16 +183,16 @@
   .skills {
     width: 100%;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px;
   }
 
   .skillImageContainer {
-    width: 80px; 
+    width: 80px;
     height: 80px;
   }
 
   .skillImageContainer img {
-    width: 50px; 
+    width: 50px;
   }
 
   .skill p {
@@ -169,14 +201,14 @@
 
   .history {
     width: 100%;
-    gap: 20px; 
+    gap: 20px;
   }
 
   .historyItem {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    padding: 20px; 
-    gap: 15px; 
+    padding: 20px;
+    gap: 15px;
   }
 
   .historyItem img {
@@ -184,17 +216,17 @@
   }
 
   .historyItemDetails h3 {
-    font-size: 24px; 
-    text-align: center; 
+    font-size: 24px;
+    text-align: center;
   }
 
   .historyItemDetails p,
   .historyItemDetails ul {
-    font-size: 18px; 
-    text-align: center; 
+    font-size: 18px;
+    text-align: center;
   }
 
   .historyItemDetails ul {
-    padding-left: 0; 
+    padding-left: 0;
   }
 }

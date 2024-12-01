@@ -1,11 +1,10 @@
 :root {
-  /* Colours */
-  --color-text: rgb(255, 255, 255); /* Light gray for readable text */
-  --color-primary: #1e1e1f; /* Very dark gray for primary background elements */
-  --color-secondary: #2a2a2b; /* Slightly lighter gray for secondary elements */
-  --color-dark: #181818; /* Almost black, a good contrast for backgrounds */
-  --color-bg: #121212; /* Dark background that isn’t pure black for reduced eye strain */
-  --color-accent: rgb(76, 175, 80); /* Modern green accent for buttons and highlights */
+  --color-text: rgb(255, 255, 255); 
+  --color-primary: #1e1e1f; 
+  --color-secondary: #2a2a2b; 
+  --color-dark: #181818; 
+  --color-bg: #121212; 
+  --color-accent: rgb(76, 175, 80); 
 
   /* Fonts */
   --font-roboto: "Roboto", sans-serif;

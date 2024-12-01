@@ -1,18 +1,17 @@
 @import "../../vars.css";
 
-/* Base Styles */
 .container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 49px;
+  gap: 4rem;
+  margin: 5rem 10% 0;
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -20,12 +19,13 @@
   z-index: 1;
 }
 
+.title {
+  margin-bottom: 2rem;
+}
+
 .line1,
 .line2 {
-  font-size: 72px;
-  font-weight: 900;
-  margin-bottom: 33px;
-  font-family: var(--font-roboto);
+  font: 900 3.5rem/1.2 var(--font-roboto);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 70%,
@@ -33,11 +33,11 @@
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font: 900 72px/1.2 var(--font-roboto);
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -46,25 +46,25 @@
   animation: 
     typewriter1 2s steps(50, end) forwards, 
     blinkCaret 0.75s step-end infinite 0.25s, 
-    hideCursor 0.75s forwards;
+    hideCursor 0.75s forwards 0.75s;
 }
 
 .line2 {
-  margin-top: 10px;
+  margin-top: 0.5rem;
   opacity: 0;
   animation: 
     typewriter2 2s steps(50, end) 2.1s forwards, 
-    blinkCaret 0.75s step-end infinite 1s;
+    blinkCaret 0.75s step-end infinite 2.1s;
 }
 
 @keyframes typewriter1 {
   from { width: 0; opacity: 1; }
-  to { width: calc(30px + 100%); opacity: 1; }
+  to { width: 100%; opacity: 1; }
 }
 
 @keyframes typewriter2 {
   from { width: 0; opacity: 1; }
-  to { width: calc(30px + 100%); opacity: 1; }
+  to { width: 100%; opacity: 1; }
 }
 
 @keyframes blinkCaret {
@@ -73,14 +73,20 @@
 }
 
 @keyframes hideCursor {
-  0%, 99% { border-right: 0.10em solid rgb(191, 194, 194); }
-  100% { border-right: none; }
+  to { border-right: none; }
 }
 
 .description {
-  font-size: 30px;
+  font-size: 2rem;
   font-family: var(--font-roboto);
-  margin-bottom: 52px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 1rem;
 }
 
 .contactBtn {
@@ -88,38 +94,52 @@
   background-color: var(--color-primary);
   color: var(--color-text);
   border-radius: 100px;
-  font-size: 30px;
+  font-size: 1.125rem;
   font-weight: 600;
-  padding: 17px 26px;
-  box-shadow: 0 0 10px rgba(168, 166, 166, 0.25);
+  padding: 0.875rem 1.75rem;
+  box-shadow: 0 4px 15px rgba(168, 166, 166, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contactBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(168, 166, 166, 0.4);
+}
+
+.imageContainer {
+  flex: 0 0 auto;
+  width: 350px;
+  z-index: 1;
+}
+
+.imageBorder {
+  position: relative;
+  border-radius: 30px;
+  padding: 8px;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--color-primary-rgb), 0.5),
+    rgba(var(--color-primary-rgb), 0.1)
+  );
 }
 
 .heroImg {
-  width: 50%;
-  z-index: 1;
-
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
 }
 
 .topBlur,
 .bottomBlur {
   position: absolute;
-  border-radius: 764px;
+  border-radius: 50%;
   background: rgba(45, 50, 58, 0.7);
   filter: blur(100px);
   z-index: 0;
@@ -129,7 +149,7 @@
   width: 50vw;
   height: 50vw;
   min-width: 350px;
-  top: -128px;
+  top: -10vw;
   left: -10vw;
 }
 
@@ -137,31 +157,16 @@
   width: 70vw;
   height: 50vw;
   min-width: 250px;
-  top: 246px;
+  bottom: -10vw;
   right: -25vw;
 }
 
-/* Existing Media Query for Tablets and Small Desktops */
 @media screen and (max-width: 1200px) {
   .container {
     flex-direction: column-reverse;
-  }
-
-  .content {
+    gap: 2rem;
+    margin-top: 3rem;
     align-items: center;
-  }
-}
-
-/* Additional Media Query for Mobile Phones */
-@media screen and (max-width: 480px) {
-  .container {
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 30px;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
   }
 
   .content {
@@ -169,29 +174,51 @@
     text-align: center;
   }
 
+  .imageContainer {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 2rem 5% 0;
+  }
+
   .line1,
   .line2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
   }
 
   .description {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-size: 1.125rem;
   }
 
-  .contactBtn {
-    font-size: 18px;
-    padding: 10px 15px;
+  .imageContainer {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 1.5rem 2% 0;
   }
 
-  .heroImg {
-    width: 100%;
-    animation: none;
+  .line1,
+  .line2 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .imageContainer {
+    width: 200px;
   }
 
   .topBlur,
   .bottomBlur {
-    display: none;
+    opacity: 0.5;
   }
 }
+

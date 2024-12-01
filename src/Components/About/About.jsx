@@ -19,7 +19,7 @@ export const About = () => {
               <div className={styles.aboutItemText}>
                 <h3>Frontend Developer</h3>
                 <p>
-                  I'm working on developing frontend with React
+                  I am working on developing frontend with React
                 </p>
               </div>
             </li>
@@ -29,6 +29,15 @@ export const About = () => {
                 <h3>Backend Developer</h3>
                 <p>
                   I am working on developing backend for websites with database, api and frameworks
+                </p>
+              </div>
+            </li>
+            <li className={styles.aboutItem}>
+              <img className={styles.database} src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
+              <div className={styles.aboutItemText}>
+                <h3>Neural Network and LLM Agent Research</h3>
+                <p>
+                  I am researching with my professor on Neural Networking and LLM Agents
                 </p>
               </div>
             </li>

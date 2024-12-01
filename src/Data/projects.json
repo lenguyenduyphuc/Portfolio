@@ -1,9 +1,16 @@
 [
-    {
-      "title": "Phuc's Portfolio",
-      "imageSrc": "projects/portfolio.png",
-      "description": "A simple portfolio to show my skills",
-      "skills": ["React", "HTML", "CSS"],
-      "source": "https://github.com/lenguyenduyphuc/Portfolio"
-    }
+  {
+    "title": "Phuc's Portfolio",
+    "imageSrc": "projects/portfolio.png",
+    "description": "A simple portfolio to show my skills",
+    "skills": ["React", "HTML", "CSS"],
+    "source": "https://github.com/lenguyenduyphuc/Portfolio"
+  },
+  {
+    "title": "The Directory",
+    "imageSrc": "projects/directory.png",
+    "description": "A directory website for students to share their favorite learning links",
+    "skills": ["React", "HTML", "CSS", "NodeJs", "Express", "MongoDB"],
+    "source": "https://github.com/lenguyenduyphuc/The-Directory"
+  }
 ]

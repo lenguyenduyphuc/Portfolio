@@ -1,151 +1,131 @@
 @import "../../vars.css";
 
-/* Base Styles */
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 25px;
-  background: linear-gradient(180deg, rgb(54, 55, 55) 50%, rgba(62, 62, 62, 0) 100%);
-  box-shadow: 0 16px 14px 0 #1c1c1c;
-  padding: 18px 24px;
-  max-width: 500px;
+  border-radius: 16px;
+  background: var(--color-secondary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 .image {
-  margin-bottom: 26px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .title {
-  font-size: 25px;
+  font-size: 1.75rem;
   font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
 .description {
-  margin-top: 6px;
-  font-size: 25px;
-  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .skills {
-  width: 100%;
-  margin-top: 14px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 6px;
-  list-style: none;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
 }
 
 .skill {
-  font-size: 25px;
-  font-weight: 400;
-  border-radius: 100px;
-  background: var(--color-dark);
-  padding: 2px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  list-style: none;
 }
 
 .links {
-  width: 100%;
-  margin-top: 26px;
   display: flex;
-  justify-content: space-around;
+  gap: 1.25rem;
+  justify-content: flex-end;
 }
 
 .link {
+  display: inline-block;
   text-decoration: none;
   color: var(--color-text);
-  font-size: 30px;
+  font-size: 1rem;
   font-weight: 600;
-  border-radius: 100px;
-  background: var(--color-primary);
-  padding: 1px 22px;
+  background: var(--color-accent);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Existing Media Query for Tablets and Small Desktops */
-@media screen and (max-width: 1200px) {
-  .container {
-    padding: 15px 20px;
-    max-width: 90%;
-  }
-
-  .title {
-    font-size: 22px;
-  }
-
-  .description {
-    font-size: 20px;
-  }
-
-  .skills {
-    gap: 10px;
-  }
-
-  .skill {
-    font-size: 20px;
-    padding: 2px 18px;
-  }
-
-  .link {
-    font-size: 24px;
-    padding: 1px 18px;
-  }
+.link:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
-/* Additional Media Query for Mobile Phones */
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
   .container {
-    margin: 60px 2% 0; 
-    padding: 15px 10px; 
-    max-width: 100%; 
-    border-radius: 15px; 
+    flex-direction: row;
+    align-items: stretch;
   }
 
   .image {
-    margin-bottom: 20px; 
-    width: 100%; 
+    width: 45%;
+    height: auto;
+  }
+
+  .content {
+    width: 55%;
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .image {
+    height: 200px;
   }
 
   .title {
-    font-size: 20px; 
-    letter-spacing: 1.5px; 
-    text-align: center; 
-    margin: 0 0 20px 0; 
+    font-size: 1.5rem;
   }
 
   .description {
-    font-size: 18px; 
-    text-align: center; 
-    margin-top: 10px; 
-  }
-
-  .skills {
-    flex-direction: column; 
-    align-items: center;
-    gap: 8px; 
+    font-size: 1rem;
   }
 
   .skill {
-    font-size: 18px;
-    padding: 2px 16px; 
-  }
-
-  .links {
-    flex-direction: column; 
-    align-items: center;
-    gap: 15px; 
-    margin-top: 20px; 
+    font-size: 0.9rem;
   }
 
   .link {
-    font-size: 20px; 
-    padding: 5px 18px;
-    width: 80%; 
-    text-align: center; 
-  }
-
-
-  .link img {
-    width: 25px; 
-    height: 25px; 
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
   }
 }
