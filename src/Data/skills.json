@@ -1,5 +1,17 @@
 [
   {
+    "title": "C++",
+    "imageSrc": "skills/cpp.png"
+  },
+  {
+    "title": "C",
+    "imageSrc": "skills/c.png"
+  },
+  {
+    "title": "Python",
+    "imageSrc": "skills/python.png"
+  },
+  {
     "title": "HTML",
     "imageSrc": "skills/html.png"
   },
@@ -8,36 +20,40 @@
     "imageSrc": "skills/css.png"
   },
   {
-    "title": "React",
-    "imageSrc": "skills/react.png"
-  },
-  {
-    "title": "Redux",
-    "imageSrc": "skills/redux.png"
-  },
-  {
-    "title": "NodeJS",
-    "imageSrc": "skills/node.png"
+    "title": "JavaScript",
+    "imageSrc": "skills/javascript.png"
   },
   {
     "title": "MongoDB",
     "imageSrc": "skills/mongodb.png"
   },
   {
-    "title": "C++",
-    "imageSrc": "skills/cpp.png"
+    "title": "ExpressJS",
+    "imageSrc": "skills/express.png"
   },
   {
-    "title": "Python",
-    "imageSrc": "skills/python.png"
+    "title": "React",
+    "imageSrc": "skills/react.png"
+  },
+  {
+    "title": "NodeJS",
+    "imageSrc": "skills/node.png"
+  },
+  {
+    "title": "Redux",
+    "imageSrc": "skills/redux.png"
   },
   {
     "title": "PyTorch",
     "imageSrc": "skills/pytorch.png"
   },
   {
-    "title": "Microsoft",
-    "imageSrc": "skills/microsoft.png"
+    "title": "Flask",
+    "imageSrc": "skills/flask.png"
+  },
+  {
+    "title": "SQL",
+    "imageSrc": "skills/sql.png"
   },
   {
     "title": "Git",
@@ -46,5 +62,9 @@
   {
     "title": "Github",
     "imageSrc": "skills/github.png"
+  },
+  {
+    "title": "Microsoft",
+    "imageSrc": "skills/microsoft.png"
   }
 ]

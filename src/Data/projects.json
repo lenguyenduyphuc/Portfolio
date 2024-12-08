@@ -12,5 +12,12 @@
     "description": "A directory website for students to share their favorite learning links",
     "skills": ["React", "HTML", "CSS", "NodeJs", "Express", "MongoDB"],
     "source": "https://github.com/lenguyenduyphuc/The-Directory"
+  },
+  {
+    "title": "Arduino Robot",
+    "imageSrc": "projects/arduino.jpg",
+    "description": "A group robot project that I am the Software Lead",
+    "skills": ["Arduino Programming", "C++"],
+    "source": "https://drive.google.com/file/d/1tWpxLDCjQGyHr2IHirNbqVrjXzzh8_xQ/view?usp=sharing"
   }
 ]
