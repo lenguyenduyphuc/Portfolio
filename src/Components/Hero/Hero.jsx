@@ -4,8 +4,8 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import heroImage from "../../../assets/hero/about.png";
 import styles from "./Hero.module.css";
-
-export const Hero = () => {
+import Pdf from "../Documents/Resume.pdf";
+const Hero = () => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const contentRef = useRef(null);
@@ -22,10 +22,17 @@ export const Hero = () => {
       });
 
       // Initial state setup
-      gsap.set([titleRef.current.children, contentRef.current.children, imageBorderRef.current], {
-        opacity: 0,
-        y: 50,
-      });
+      gsap.set(
+        [
+          titleRef.current.children,
+          contentRef.current.children,
+          imageBorderRef.current,
+        ],
+        {
+          opacity: 0,
+          y: 50,
+        }
+      );
 
       // Main animation sequence
       tl.fromTo(
@@ -42,7 +49,13 @@ export const Hero = () => {
         .fromTo(
           imageBorderRef.current,
           { scale: 0.8, opacity: 0, rotation: -10 },
-          { scale: 1, opacity: 1, rotation: 0, duration: 1.2, ease: "elastic.out(1, 0.5)" },
+          {
+            scale: 1,
+            opacity: 1,
+            rotation: 0,
+            duration: 1.2,
+            ease: "elastic.out(1, 0.5)",
+          },
           "-=0.8"
         );
 
@@ -71,7 +84,7 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 ref={titleRef} className={styles.title}>
           <span className={styles.line1}>Hello world,</span>
-          <br/>
+          <br />
           <span className={styles.line2}>I'm Nguyen Duy Phuc Le</span>
         </h1>
         <div ref={contentRef}>
@@ -81,19 +94,20 @@ export const Hero = () => {
             about me.
           </p>
           <div className={styles.btnContainer}>
-            <a
-              href="mailto:duyphuclenguyen@gmail.com"
-              className={styles.contactBtn}
-              aria-label="Contact me via email"
-            >
-              Get in touch with me
+            <a href={Pdf} className={styles.contactBtn} aria-label="My resume">
+              My Resume
             </a>
           </div>
         </div>
       </div>
       <div className={styles.imageContainer}>
         <div ref={imageBorderRef} className={styles.imageBorder}>
-          <img ref={imageRef} src={heroImage} alt="Hero portrait" className={styles.heroImg} />
+          <img
+            ref={imageRef}
+            src={heroImage}
+            alt="Hero portrait"
+            className={styles.heroImg}
+          />
         </div>
       </div>
       <div className={styles.topBlur} aria-hidden="true" />
