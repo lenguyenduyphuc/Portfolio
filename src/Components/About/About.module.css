@@ -1,164 +1,231 @@
-@import "../../vars.css";
-
+/* About.css */
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.8);
-  border-radius: 20px;
-  padding: 5rem 4rem;
-  margin: 8rem auto 0;
+  background-color: rgba(12, 12, 12, 0.95);
+  border-radius: clamp(15px, 3vw, 20px);
+  padding: clamp(2rem, 5vw, 5rem);
+  margin: clamp(2rem, 5vw, 4rem) auto;
   max-width: 1200px;
-  width: 90%;
+  width: min(90%, 1200px);
   z-index: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(100, 255, 218, 0.05) 0%,
+    rgba(72, 185, 255, 0.02) 50%,
+    transparent 70%
+  );
+  opacity: 0.5;
+  animation: rotate 30s linear infinite;
+  pointer-events: none;
 }
 
 .title {
-  color: var(--color-text);
-  font: 700 2.5rem/1.2 var(--font-roboto);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(90deg, #64ffda 0%, #48b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.description {
+  color: var(--color-text);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
 }
 
 .content {
   display: flex;
-  align-items: flex-start;
-  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .aboutImage {
-  width: 35%;
-  max-width: 300px;
-  border-radius: 15px;
+  width: min(300px, 35%);
+  aspect-ratio: 1;
+  border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(100, 255, 218, 0.1);
+}
+
+.aboutImage:hover {
+  transform: scale(1.02);
+  border-color: rgba(100, 255, 218, 0.3);
 }
 
 .aboutItems {
-  color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2rem);
   flex: 1;
+  max-width: 600px;
+  width: 100%;
 }
 
 .aboutItem {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 15px;
-  list-style: none;
   background: linear-gradient(
     90deg,
     rgba(165, 215, 232, 0.1) 0%,
     rgba(255, 255, 255, 0.05) 100%
   );
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .aboutItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(165, 215, 232, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: rgba(100, 255, 218, 0.2);
 }
 
-.iconWrapper {
-  background-color: rgba(165, 215, 232, 0.1);
-  border-radius: 50%;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.itemIcon {
+  width: clamp(2.5rem, 5vw, 3rem);
+  height: clamp(2.5rem, 5vw, 3rem);
+  filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.3));
+  transition: transform 0.3s ease;
 }
 
-.mouse,
-.database {
-  width: 2rem;
-  height: 2rem;
+.aboutItem:hover .itemIcon {
+  transform: scale(1.1);
 }
 
-.itemContent {
+.aboutItemText {
   flex: 1;
 }
 
-.aboutItem h3 {
-  font-size: 1.25rem;
+.aboutItemText h3 {
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
   font-weight: 600;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #64ffda 0%, #48b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.aboutItem p {
-  font-size: 1rem;
+.aboutItemText p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   line-height: 1.5;
   opacity: 0.8;
+  color: var(--color-text);
 }
 
-@media screen and (max-width: 1024px) {
+/* Animations */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
   .container {
-    padding: 4rem 3rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
+    margin: clamp(1rem, 3vw, 2rem) auto;
   }
 
   .content {
     flex-direction: column;
-    align-items: center;
+    gap: clamp(1.5rem, 4vw, 2rem);
   }
 
   .aboutImage {
-    width: 50%;
-    margin-bottom: 2rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 3rem 2rem;
-    margin-top: 4rem;
+    width: min(200px, 70%);
+    margin: 0 auto;
   }
 
-  .title {
-    font-size: 2rem;
-  }
-
-  .aboutImage {
-    width: 70%;
+  .aboutItems {
+    padding: 0;
   }
 
   .aboutItem {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .iconWrapper {
-    margin-bottom: 1rem;
+    text-align: left;
   }
 }
 
+/* Small Mobile Styles */
 @media screen and (max-width: 480px) {
   .container {
-    padding: 2rem 1.5rem;
-    margin-top: 3rem;
+    width: 95%;
+    padding: 1.5rem;
   }
 
-  .title {
-    font-size: 1.75rem;
+  .aboutItems {
+    gap: 1rem;
   }
 
-  .aboutImage {
-    width: 100%;
+  .aboutItem {
+    padding: 1.25rem;
   }
 
-  .aboutItem h3 {
-    font-size: 1.1rem;
-  }
-
-  .aboutItem p {
-    font-size: 0.9rem;
-  }
-
-  .mouse,
-  .database {
-    width: 1.5rem;
-    height: 1.5rem;
+  .itemIcon {
+    min-width: 2.5rem;
   }
 }
 
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .aboutImage:hover {
+    transform: none;
+  }
+
+  .aboutItem:hover {
+    transform: none;
+  }
+
+  .aboutItem:hover .itemIcon {
+    transform: none;
+  }
+}
+
+/* Loading Animation for Items */
+.aboutItem {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.aboutItem:nth-child(1) { animation-delay: 0.1s; }
+.aboutItem:nth-child(2) { animation-delay: 0.2s; }
+.aboutItem:nth-child(3) { animation-delay: 0.3s; }

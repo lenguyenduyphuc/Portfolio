@@ -1,75 +1,62 @@
-@import "../../vars.css";
-
-/* Base Styles */
 .container {
-  margin-top: 76px;
-  color: var(--color-text);
-  margin-left: 10%;
-  margin-right: 10%;
+  background: #0a0b0f;
+  padding: 4rem 0;
+  margin-top: 4rem;
+  min-height: 100vh;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-  font-size: 35px;
-  font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
-  margin-left: 50px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #64ffda 0%, #48b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .projects {
-  margin-top: 37px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* Existing Media Query for Tablets and Small Desktops */
-@media screen and (max-width: 1200px) {
-  .container {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  .title {
-    font-size: 30px;
-    margin-left: 30px;
-  }
-
-  .projects {
-    gap: 10px;
-  }
-}
-
-/* Additional Media Query for Mobile Phones */
 @media screen and (max-width: 480px) {
   .container {
-    margin: 40px 2% 0; 
-    padding: 10px; 
-    width: 100%;
-    box-sizing: border-box; 
+    padding: 2rem 1rem;
   }
 
   .title {
-    font-size: 24px; 
-    margin-left: 0; 
-    text-align: center; 
-    letter-spacing: 1.5px; 
-    margin-bottom: 20px; 
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
   }
 
   .projects {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; 
-    margin-top: 20px; 
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem;
+    gap: 1rem;
   }
+}
 
-  .projects > * {
-    width: 90%; 
-    max-width: 400px; 
+/* Content Loading Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects > * {
+  animation: fadeIn 0.5s ease-out forwards;
 }

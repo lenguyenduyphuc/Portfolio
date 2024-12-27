@@ -1,29 +1,30 @@
-@import "../../vars.css";
-
 .container {
   color: var(--color-text);
   margin: 79px 10% 0;
 }
 
 .title {
-  color: var(--color-text);
-  margin: 0 0 50px 20px;
-  font: 700 35px/1.2 var(--font-roboto);
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #64ffda 0%, #48b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .content {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 14px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .skills {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 37px;
-  width: 90%;
+  gap: 20px;
+  width: 100%;
 }
 
 .skill {
@@ -55,40 +56,34 @@
 }
 
 .skillImageContainer img {
-  width: 75px;
+  width: 50px;
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 .skill p {
-  font: 500 25px/1 var(--font-roboto);
+  font: 500 16px/1 var(--font-roboto);
 }
+
 
 .history {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  width: 60%;
+  gap: 20px;
+  width: 100%;
 }
 
 .historyItem {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 25px;
-  border-radius: 20px;
-  list-style: none;
+  padding: 20px;
+  border-radius: 10px;
   background: linear-gradient(90deg, rgba(165, 215, 232, 0.42) 0%, rgba(255, 255, 255, 0) 100%);
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -110,9 +105,11 @@
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(15deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
@@ -142,91 +139,41 @@
   list-style: disc inside;
 }
 
-@media screen and (max-width: 1200px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 34px;
-  }
-
-  .skills {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .history {
-    width: 100%;
-    gap: 9px;
-  }
-}
-
 @media screen and (max-width: 480px) {
   .container {
     margin: 50px 2%;
   }
 
-  .title {
-    margin: 0 0 30px 0;
-    font: 700 28px/1.2 var(--font-roboto);
-    letter-spacing: 1.5px;
-    text-align: center;
-  }
-
   .content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .skills {
-    width: 100%;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .skillImageContainer {
-    width: 80px;
-    height: 80px;
-  }
-
-  .skillImageContainer img {
-    width: 50px;
-  }
-
-  .skill p {
-    font: 500 20px/1 var(--font-roboto);
-  }
-
-  .history {
-    width: 100%;
-    gap: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 14px;
   }
 
   .historyItem {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    gap: 15px;
-  }
-
-  .historyItem img {
-    width: 60px;
-  }
-
-  .historyItemDetails h3 {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .historyItemDetails p,
-  .historyItemDetails ul {
-    font-size: 18px;
     text-align: center;
   }
 
   .historyItemDetails ul {
-    padding-left: 0;
+    padding-left: 20px;
+    text-align: left;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .skill:hover {
+    transform: none;
+  }
+
+  .skillImageContainer:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .historyItem:hover {
+    background-size: 0 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 }
