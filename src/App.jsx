@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import styles from "./App.module.css";
 
 import Navbar from "./Components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
+import Hero from "./Components/Hero/Hero";
 import About from "./components/About/About";
 import Experience from "./Components/Experience/Experience";
 import Project from "./Components/Projects/Projects";

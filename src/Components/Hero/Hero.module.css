@@ -179,7 +179,7 @@
   }
 
   .line1, .line2 {
-    font-size: 0.8em; /* Reduce font size on smaller screens */
+    font-size: 0.5em; 
   }
 
   .title {
