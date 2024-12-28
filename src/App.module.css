@@ -1,11 +1,25 @@
 @import "./vars.css";
 
+/* .App {
+  background-color: var(--color-bg);
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+} */
+
 .App {
   background-color: var(--color-bg);
-  color: var(--color-bg);
+  color: var(--color-text);
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   overflow: hidden;
 }
+
