@@ -90,8 +90,8 @@ const Hero = () => {
         <div ref={contentRef}>
           <p className={styles.description}>
             I am a growing fullstack developer who loves learning new things and
-            making new connections. Please reach out if you want to know more
-            about me.
+            making new connections and working experiences. Please reach out if
+            you want to know more about me.
           </p>
           <div className={styles.btnContainer}>
             <a href={Pdf} className={styles.contactBtn} aria-label="My resume">
