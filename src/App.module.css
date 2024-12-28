@@ -12,14 +12,15 @@
 
 .App {
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: black;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
+  position: relative;
 }
 
