@@ -4,7 +4,6 @@
   background-color: var(--color-bg);
   width: 100%;
   min-height: 100vh;
-  color: white;
   display: flex;
   flex-direction: column;
   overflow: hidden;
