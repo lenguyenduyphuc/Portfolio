@@ -116,10 +116,10 @@ const About = () => {
               alt="UI icon"
             />
             <div className={styles.aboutItemText}>
-              <h3>AI engineer</h3>
+              <h3>AI Researcher and Enthusiast</h3>
               <p>
-                I'm passionate about Large Language Models
-                and building Deep Neural Network
+                I'm passionate about Large Language Models and building Deep
+                Neural Network
               </p>
             </div>
           </li>
